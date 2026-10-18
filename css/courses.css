@@ -1,0 +1,1856 @@
+/* =========================================
+   MOVÉ — COURSES PAGE
+========================================= */
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.courses-hero {
+    position: relative;
+    min-height: 635px;
+    background: radial-gradient(
+        circle at 10% 95%,
+        rgba(189, 145, 113, .35),
+        transparent 25%
+    ), radial-gradient(
+        circle at 92% 9%,
+        rgba(189, 145, 113, .35),
+        transparent 27%
+    ), var(--black);
+    color: var(--cream);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Hiệu ứng nhấp nhô nhẹ cho spotlight nền */
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.courses-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    padding: 70px 40px 75px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.courses-label {
+
+    display: block;
+
+    margin-bottom: 27px;
+padding-top: 40px;
+    color: var(--brown);
+
+    font-family: var(--body);
+
+    font-size: 12px;
+
+    font-weight: 300;
+
+    letter-spacing: 0.2px;
+
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.courses-hero h1 {
+
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: var(--display);
+
+    font-size: clamp(65px, 6vw, 90px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -1.7px;
+
+}
+
+.courses-hero em {
+    color: var(--brown);
+}
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.courses-hero-description {
+
+    margin: 37px auto 0;
+
+    color: rgba(241, 236, 225, 0.82);
+
+    font-family: var(--body);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================
+   DECORATIVE CHESS PIECES
+========================================= */
+
+.courses-piece {
+
+    position: absolute;
+
+    color: var(--cream);
+
+    font-family: "Times New Roman", serif;
+
+    line-height: 1;
+pointer-events: none;
+    user-select: none;
+
+}
+
+
+/* Knight */
+
+.courses-piece-knight {
+
+    top: 80px;
+
+    right: 17%;
+
+    font-size: 125px;
+animation: floatKnight 5.5s ease-in-out infinite;
+    transform: rotate(-3deg);
+      opacity: 0.7;
+}
+
+.courses-piece-one {
+
+    bottom: 190px;
+
+    right: 6%;
+
+    font-size: 85px;
+animation: floatPieceOne 4.8s ease-in-out infinite 0.6s;
+    transform: rotate(14deg);
+      opacity: 0.9;
+}
+/* Pawn */
+
+.courses-piece-pawn {
+
+    left: 11%;
+
+    bottom: 43px;
+
+    font-size: 175px;
+animation: floatPawn 6s ease-in-out infinite 1.2s;
+    transform: rotate(-7deg);
+      opacity: 0.8;
+}
+
+.courses-piece-two {
+
+    left: 7%;
+
+    top: 110px;
+
+    font-size: 65px;
+animation: floatPieceTwo 5.2s ease-in-out infinite 0.3s;
+    transform: rotate(16deg);
+      opacity: 0.8;
+}
+/* =========================================
+   TEST BOX
+========================================= */
+
+.courses-test-box {
+
+    width: min(615px, 90%);
+
+    min-height: 80px;
+
+    margin: 55px auto 0;
+
+    padding: 13px 37px 13px 28px;
+
+    border: 0.7px solid rgba(241, 236, 225, 0.75);
+
+    border-radius: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    text-align: left;
+transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.courses-test-box:hover {
+    border-color: var(--brown);
+    box-shadow: 0 0 20px rgba(189, 145, 113, 0.15);
+    transform: translateY(-2px);
+}
+/* =========================================
+   TEST CONTENT
+========================================= */
+
+.courses-test-content {
+
+    min-width: 0;
+
+}
+
+
+.courses-test-content h2 {
+
+    margin: 0 0 5px;
+
+    color: var(--brown);
+
+    font-family: var(--display);
+
+    font-size: 22px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+letter-spacing: 0.6px;
+}
+
+
+.courses-test-content p {
+
+    margin: 0;
+
+    color: rgba(241, 236, 225, 0.75);
+
+    font-family: var(--body);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================
+   TEST BUTTON
+========================================= */
+
+.courses-test-button {
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 150px;
+
+    height: 40px;
+
+    padding: 0 24px;
+
+    border-radius: 30px;
+
+    background: var(--brown);
+
+    color: var(--dark-brown);
+
+    font-family: var(--display);
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+
+.courses-test-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #c9a07e;
+color: var(--darkbrown);
+box-shadow: 0 4px 15px rgba(189, 145, 113, 0.4);
+}
+/* --- A. CHUYỂN ĐỘNG CHO 4 QUÂN CỜ TRANG TRÍ --- */
+
+/* 1. Mã (Knight - Top Right) */
+@keyframes floatKnight {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-12px); }
+}
+
+/* 2. Quân phụ 1 (Top Left) */
+@keyframes floatPieceOne {
+  0%, 100% { transform: rotate(14deg) translateY(0); }
+  50% { transform: rotate(14deg) translateY(-8px); }
+}
+
+/* 3. Tốt (Pawn - Bottom Left) */
+@keyframes floatPawn {
+  0%, 100% { transform: rotate(-7deg) translateY(0); }
+  50% { transform: rotate(-7deg) translateY(-14px); }
+}
+
+/* 4. Quân phụ 2 (Bottom Right) */
+@keyframes floatPieceTwo {
+  0%, 100% { transform: rotate(16deg) translateY(0); }
+  50% { transform: rotate(16deg) translateY(-10px); }
+}
+
+
+/* --- B. HIỆU ỨNG THỞ NỀN RADIAL SPOTLIGHT --- */
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* =========================================
+   COURSE PATH SECTION
+========================================= */
+
+.courses-path {
+
+    background: var(--cream);
+min-height: 730px;
+    color: var(--dark-brown);
+
+    padding: 70px 7% 0;
+
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.courses-path-header {
+
+    text-align: center;
+
+}
+
+
+.courses-section-label {
+
+    display: block;
+
+    margin-bottom: 23px;
+
+    color: var(--brown);
+
+    font-family: var(--body);
+
+    font-size: 13px;
+
+    line-height: 1;
+
+}
+
+
+.courses-path-header h2 {
+
+    margin: 0;
+
+    color: var(--darkbrown);
+
+    font-family: var(--display);
+
+    font-size: clamp(40px, 4vw, 50px);
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* =========================================
+   COURSE TABLE
+========================================= */
+
+.courses-table {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 43px auto 0;
+
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.courses-table-header {
+
+    display: grid;
+
+    grid-template-columns:
+        1.55fr
+        1.05fr
+        0.8fr
+        1fr
+        0.9fr;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 40px;
+
+    border-bottom: 1px solid rgba(189, 145, 113, 0.55);
+
+    color: var(--brown);
+
+    font-family: var(--body);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   COURSE ROW
+========================================= */
+
+.course-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1.55fr
+        1.05fr
+        0.8fr
+        1fr
+        0.9fr;
+
+    align-items: center;
+
+    min-height: 109px;
+
+    padding: 0 40px;
+
+    border-bottom: 1px solid rgba(189, 145, 113, 0.55);
+
+    font-family: var(--body);
+
+    font-size: 15px;
+
+    color: var(--darkbrown);
+   transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+
+.course-row:hover {
+transform: translateX(6px);
+background-color: #EFE7D7 ;
+}
+
+
+/* =========================================
+   COURSE NAME
+========================================= */
+
+.course-name h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--darkbrown);
+
+    font-family: var(--display);
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 500;
+
+}
+.course-entry {
+    color: var(--darkbrown);
+    opacity: 0.8;
+}
+
+.course-name span {
+
+    display: block;
+
+    color: var(--brown);
+
+    font-family: var(--body);
+
+    font-size: 11px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================
+   COURSE PRICE
+========================================= */
+
+.course-price {
+
+    color: var(--darkbrown);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+.course-sessions {
+        white-space: nowrap;
+            color: var(--darkbrown);
+    opacity: 0.8;
+}
+
+/* =========================================
+   COURSE LINK
+========================================= */
+
+.course-link {
+
+    justify-self: end;
+
+    color: var(--dark-brown);
+background: var(--cream);
+    font-family: var(--body);
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.course-link:hover {
+
+    color: var(--brown);
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================
+   DESKTOP ONLY
+========================================= */
+
+.desktop-only {
+    display: inline;
+}
+
+/* ==========================
+   DISCOUNT SECTION
+========================== */
+
+.discount-section {
+    background: var(--darkbrown);
+    padding: 70px 8%;
+}
+
+
+/* HEADING */
+
+.discount-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.discount-label {
+    color: var(--cream);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+    opacity:0.8;
+}
+
+.discount-heading h2 {
+    font-family: Georgia, serif;
+
+    font-size: 60px;
+    font-weight: normal;
+    color: var(--brown);
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+}
+.discount-heading em {
+color: var(--cream);
+}
+.discount-heading p {
+    max-width: 450px;
+    margin: auto;
+    color: var(--cream);
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.6;
+}
+
+
+/* ==========================
+   SMALL DISCOUNT CARDS
+========================== */
+
+.discount-grid {
+    max-width: 900px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+}
+
+.discount-card {
+    background: var(--cream);;
+
+    padding: 35px;
+
+    min-height: 330px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(0,0,0,0.06);
+
+    transition: 0.25s ease;
+}
+
+.discount-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* TOP */
+
+.discount-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.discount-number {
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    color: #BD9171;
+}
+
+.discount-tag {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* NAME */
+
+.discount-name {
+    font-family: Georgia, serif;
+font-weight: 500;
+    font-size: 40px;
+color: var(--darkbrown);
+    margin-bottom: 8px;
+}
+
+
+/* PERCENT */
+
+.discount-percent {
+    font-family: Georgia, serif;
+
+    font-size: 60px;
+
+    color: #BD9171;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+/* DESCRIPTION */
+
+.discount-card p {
+    font-size: 13px;
+color: var(--darkbrown);
+    line-height: 1.7;
+
+    max-width: 400px;
+
+    opacity: 0.7;
+}
+
+
+/* NOTE */
+
+.discount-note {
+    font-size: 10px;
+
+    color: #888;
+
+    margin-top: 15px;
+}
+
+
+/* LINK */
+
+.discount-link {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.7px;
+
+    border-bottom: 1px solid #BD9171;
+
+    padding-bottom: 4px;
+
+    width: fit-content;
+        transition: 0.25s ease;
+}
+
+
+.discount-link:hover {
+    transform: translateX(4px);
+}
+/* =========================================
+   FIRST MOVE — DISCOUNT POPUP
+========================================= */
+
+/* Lớp popup toàn màn hình */
+.discount-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Popup đang mở */
+.discount-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Nền tối phía sau */
+.discount-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+
+/* Khung nội dung */
+.discount-panel {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 570px;
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 42px 44px 35px;
+
+    background: var(--cream);
+    color: var(--dark-brown);
+
+    border: 1px solid var(--brown);
+    border-radius: 4px;
+
+    transform: translateY(12px);
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Hiệu ứng khi mở */
+.discount-modal.is-open .discount-panel {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   NÚT ĐÓNG
+========================================= */
+
+.discount-close {
+    position: absolute;
+
+    top: 12px;
+    right: 17px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--dark-brown);
+
+    font-family: Arial, sans-serif;
+    font-size: 29px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.discount-close:hover {
+    color: var(--brown);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.discount-eyebrow {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--brown);
+
+    font-family: var(--body);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+
+.discount-panel h2 {
+    margin: 0 0 27px;
+
+    color: var(--dark-brown);
+
+    font-family: var(--display);
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+
+/* =========================================
+   MỨC GIẢM 3%
+========================================= */
+
+.discount-highlight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 27px;
+    padding: 19px 20px;
+
+    background: rgba(189, 145, 113, 0.13);
+
+    border-left: 3px solid var(--brown);
+}
+
+
+.discount-percent {
+    flex-shrink: 0;
+
+    color: var(--brown);
+
+    font-family: var(--display);
+    font-size: 42px;
+    line-height: 1;
+}
+
+
+.discount-highlight strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.discount-highlight p {
+    margin: 0;
+
+    font-family: var(--body);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   ĐIỀU KIỆN
+========================================= */
+
+.discount-conditions {
+    margin-bottom: 27px;
+}
+
+
+.discount-conditions h3,
+.discount-prices h3 {
+    margin: 0 0 13px;
+
+    color: var(--brown);
+
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+
+.discount-conditions ul {
+    margin: 0;
+
+    padding-left: 18px;
+}
+
+
+.discount-conditions li {
+    margin-bottom: 8px;
+    padding-left: 3px;
+
+    font-family: var(--body);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   HỌC PHÍ
+========================================= */
+
+.discount-prices {
+    padding-top: 22px;
+
+    border-top:
+        1px solid
+        rgba(189, 145, 113, 0.55);
+}
+
+
+.discount-price-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid
+        rgba(189, 145, 113, 0.35);
+}
+
+
+.discount-course-name {
+    font-family: var(--display);
+    font-size: 17px;
+}
+
+
+.discount-price-detail {
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+
+.discount-original {
+    color: #8f8175;
+
+    font-family: var(--body);
+    font-size: 11px;
+
+    text-decoration: line-through;
+}
+
+
+.discount-price-detail strong {
+    color: var(--dark-brown);
+
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   GHI CHÚ
+========================================= */
+
+.discount-note {
+    margin: 22px 0;
+
+    color: #766456;
+
+    font-family: var(--display);
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   NÚT ĐÃ HIỂU
+========================================= */
+
+.discount-done {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--brown);
+    color: var(--dark-brown);
+
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.discount-done:hover {
+    background: #c9a07e;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .discount-modal {
+        padding: 14px;
+    }
+
+
+    .discount-panel {
+        max-height: 90vh;
+
+        padding:
+            38px 23px 25px;
+    }
+
+
+    .discount-panel h2 {
+        font-size: 27px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .discount-highlight {
+        gap: 14px;
+
+        padding: 16px;
+    }
+
+
+    .discount-percent {
+        font-size: 36px;
+    }
+
+
+    .discount-highlight strong {
+        font-size: 12px;
+    }
+
+
+    .discount-highlight p {
+        font-size: 11px;
+    }
+
+
+    .discount-course-name {
+        font-size: 15px;
+    }
+
+
+    .discount-price-detail strong {
+        font-size: 13px;
+    }
+
+
+    .discount-conditions li {
+        font-size: 11px;
+    }
+
+}
+/* ==========================
+   FEATURE DISCOUNT
+========================== */
+
+.discount-feature {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    background: #BD9171;
+
+    padding: 45px 50px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.8fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* LABEL */
+
+.feature-label {
+    font-size: 10px;
+color: var(--darkbrown);
+    letter-spacing: 2px;
+opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+
+/* TITLE */
+
+.feature-content h3 {
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+.feature-content p {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 480px;
+
+    opacity: 0.7;
+}
+
+
+/* COURSE FLOW */
+
+.feature-course {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* OFFER */
+
+.feature-offer {
+    border-left: 1px solid rgba(0,0,0,0.25);
+    padding-left: 40px;
+    
+    /* 1. Biến nó thành Flex container để điều khiển căn chỉnh */
+    display: flex;
+    flex-direction: column; /* Xếp các lớp con theo chiều dọc từ trên xuống */
+    
+    /* 2. Căn giữa theo chiều ngang (trục vuông góc với chiều dọc) */
+    align-items: center; 
+    
+    /* 3. Căn giữa theo chiều dọc (nếu khung có chiều cao cố định) */
+    justify-content: center; 
+    
+    /* 4. Đề phòng các thẻ chữ con bên trong tự căn lề trái */
+    text-align: center; 
+    padding-left: 40px;
+}
+
+.feature-price-detail {
+    display: flex;
+    color:var(--cream);
+    flex-direction: column;
+    font-size: 38px;
+line-height:25px;
+font-weight:300;
+gap:5px;
+    white-space: nowrap;
+        font-family: var(--display);
+}
+
+
+.feature-original {
+  opacity: 0.8;
+
+    font-size: 20px;
+    text-decoration: line-through;
+    text-decoration-color: var(--darkbrown);
+}
+
+.feature-note {
+    font-size: 9px;
+color: var(--darkbrown);
+    letter-spacing: 0.5px;
+padding-top:20px;
+    margin-bottom: 10px;
+}
+
+.feature-button {
+    display: inline-block;
+
+    background: var(--black);
+
+    color: var(--cream);
+
+    padding: 12px 18px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.7px;
+    transition:
+        background 0.2s ease;
+}
+.feature-button:hover {
+        background: var(--darkbrown);
+}
+
+/* ==========================
+   CONDITION
+========================== */
+
+.discount-condition {
+    max-width: 900px;
+
+    margin: 18px auto 0;
+
+    font-size: 9px;
+
+    color: var(--brown);
+opacity:0.7;
+    text-align: right;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 750px) {
+
+    .discount-heading h2 {
+        font-size: 36px;
+    }
+
+    .discount-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .discount-feature {
+        grid-template-columns: 1fr;
+
+        padding: 35px 30px;
+    }
+
+    .feature-offer {
+        border-left: none;
+
+        border-top: 1px solid rgba(0,0,0,0.25);
+
+        padding-left: 0;
+
+        padding-top: 30px;
+    }
+
+    .discount-condition {
+        text-align: left;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .courses-piece-knight {
+
+        right: 45px;
+
+        top: 105px;
+
+        font-size: 55px;
+
+    }
+
+
+    .courses-piece-pawn {
+
+        left: 35px;
+
+        bottom: 35px;
+
+        font-size: 95px;
+
+    }
+
+
+    .courses-hero-content {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .courses-path {
+
+        padding-left: 4%;
+
+        padding-right: 4%;
+
+    }
+
+
+    .courses-table-header,
+    .course-row {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .course-row {
+
+        font-size: 14px;
+
+    }
+
+
+    .course-name h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .course-link {
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    /* HERO */
+
+    .courses-hero {
+
+        min-height: auto;
+
+    }
+
+
+    .courses-hero-content {
+
+        padding:
+            55px 20px
+            65px;
+
+    }
+
+
+    .courses-label {
+
+        font-size: 13px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .courses-hero h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -1.5px;
+
+    }
+
+
+    .courses-hero-description {
+
+        margin-top: 27px;
+
+        font-size: 11px;
+
+    }
+
+
+    .desktop-only {
+
+        display: none;
+
+    }
+
+
+    /* CHESS PIECES */
+
+    .courses-piece-knight {
+
+        top: 95px;
+
+        right: 12px;
+
+        font-size: 42px;
+
+        opacity: 0.9;
+
+    }
+
+
+    .courses-piece-pawn {
+
+        left: 10px;
+
+        bottom: 20px;
+
+        font-size: 72px;
+
+        opacity: 0.9;
+
+    }
+
+
+    /* TEST BOX */
+
+    .courses-test-box {
+
+        width: 100%;
+
+        margin-top: 40px;
+
+        padding: 17px 18px;
+
+        border-radius: 18px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+    }
+
+
+    .courses-test-content h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .courses-test-content p {
+
+        font-size: 9px;
+
+    }
+
+
+    .courses-test-button {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    /* PATH */
+
+    .courses-path {
+
+        padding:
+            40px 20px
+            0;
+
+    }
+
+
+    .courses-section-label {
+
+        font-size: 13px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .courses-path-header h2 {
+
+        font-size: 34px;
+
+        line-height: 1.05;
+
+    }
+
+
+    /* TABLE */
+
+    .courses-table {
+
+        margin-top: 35px;
+
+    }
+
+
+    .courses-table-header {
+
+        display: none;
+
+    }
+
+
+    .course-row {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+
+        min-height: auto;
+
+        padding:
+            25px 5px;
+
+    }
+
+
+    .course-name {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .course-name h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .course-entry::before {
+
+        content: "Đầu vào";
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: var(--brown);
+
+        font-size: 11px;
+
+    }
+
+
+    .course-row > div:nth-child(3)::before {
+
+        content: "Số buổi";
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: var(--brown);
+
+        font-size: 11px;
+
+    }
+
+
+    .course-price::before {
+
+        content: "Học phí";
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: var(--brown);
+
+        font-size: 11px;
+
+    }
+
+
+    .course-link {
+
+        justify-self: start;
+
+        grid-column: 1 / -1;
+
+        margin-top: 3px;
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .courses-hero h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .courses-path-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .courses-piece-knight {
+
+        font-size: 34px;
+
+        right: 7px;
+
+    }
+
+
+    .courses-piece-pawn {
+
+        font-size: 60px;
+
+        left: 5px;
+
+    }
+
+}
+/* =========================================
+   MOVE TOGETHER — MECHANISM
+========================================= */
+
+.discount-mechanism {
+    margin-bottom: 27px;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid
+        rgba(189, 145, 113, 0.55);
+}
+
+
+.discount-mechanism h3 {
+    margin: 0 0 15px;
+
+    color: var(--brown);
+
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================
+   MECHANISM ITEM
+========================================= */
+
+.mechanism-item {
+    display: grid;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid
+        rgba(189, 145, 113, 0.3);
+}
+
+
+.mechanism-item:last-child {
+    border-bottom: none;
+}
+
+
+.mechanism-number {
+    color: var(--brown);
+
+    font-family: var(--display);
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+
+.mechanism-item p {
+    margin: 0;
+
+    color: var(--dark-brown);
+
+    font-family: var(--body);
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+.mechanism-item strong {
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+
+    .mechanism-item {
+        grid-template-columns: 30px 1fr;
+
+        gap: 9px;
+    }
+
+
+    .mechanism-item p {
+        font-size: 11px;
+    }
+
+
+    .mechanism-number {
+        font-size: 15px;
+    }
+
+}

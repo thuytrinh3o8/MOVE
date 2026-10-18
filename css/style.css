@@ -1,0 +1,1491 @@
+/* ==================================================
+   MOVÉ — GLOBAL STYLE
+================================================== */
+
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+:root {
+
+    --cream: #F1ECE1;
+    --black: #000000;
+    --brown: #BD9171;
+    --darkbrown: #3B2312;
+
+    --text: #000000;
+    --text-light: #F1ECE1;
+    --text-muted: #756E67;
+
+    --border: rgba(0, 0, 0, .14);
+    --border-light: rgba(241, 236, 225, .18);
+
+    --container: 1180px;
+
+    --display:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    --body:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--black);
+
+    color: var(--text);
+
+    font-family: var(--body);
+
+    line-height: 1.5;
+
+}
+
+
+img {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+button,
+input,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+/* ==================================================
+   GLOBAL
+================================================== */
+
+.section-inner {
+
+    width: min(
+        var(--container),
+        88%
+    );
+
+    margin: 0 auto;
+
+}
+
+
+.section-cream {
+
+    background: var(--cream);
+
+    color: var(--black);
+
+}
+
+
+.section-black {
+
+    background: var(--black);
+
+    color: var(--cream);
+
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar {
+
+    height: 80px;
+
+    background: var(--black);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 60px;
+
+ position: fixed;   /* Cố định ở đỉnh */
+    top: 0;            /* Dính sát mép trên */
+    left: 0;           /* Kéo từ mép trái qua */
+    width: 100%;       /* Phủ kín 100% chiều rộng màn hình */
+    z-index: 1000;   /* Đảm bảo navbar luôn hiển thị đè lên trên các nội dung khác khi cuộn qua */
+    box-sizing: border-box;
+    /* Các thuộc tính cũ của bạn giữ nguyên ở đây (background, width, display,...) */
+
+}
+
+
+.logo {
+height: 100px; /* Bạn có thể tăng hoặc giảm số này cho cân đối với thanh menu */
+    width: 170px;
+    align-items: center;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+    list-style: none;
+
+}
+
+
+.nav-links a {
+ color: var(--cream);
+    font-size: 15px;
+font-family: var(--display);
+    transition: opacity .2s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: var(--brown);
+
+}
+/* Khung chứa dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Thẻ mũi tên nhỏ cạnh chữ Khóa học (tuỳ chọn) */
+.dropdown-trigger .arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Menu con thả xuống */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    
+    background: var(--black); /* Nâu đen tiệp màu giao diện */
+    border: 1px solid var(--darkbrown);
+    border-radius: 4px;
+    padding: 10px 0;
+    margin-top: 12px;
+    list-style: none;
+    
+    /* Hiệu ứng ẩn & trượt mượt mà */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+/* Các đường link khóa học bên trong */
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--cream);
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hiệu ứng rê chuột vào từng khóa học trong menu */
+.dropdown-menu li a:hover {
+    background: rgba(189, 145, 113, 0.15);
+    color: var(--brown);
+}
+
+/* 🔥 KHI RÊ CHUỘT VÀO "KHÓA HỌC" SẼ HIỆN MENU */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-trigger .arrow {
+    transform: rotate(180deg);
+}
+
+/* Tạo khoảng đệm ngầm (bridge) để chuột di chuyển xuống menu không bị ngắt quãng */
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
+.nav-test {
+    background: var(--brown);
+    color: var(--darkbrown) !important;
+    padding: 10px 16px;
+    border-radius: 20px;
+transition: background 0.4s ease, color 0.4s ease;
+    font-size: clamp(2px, 2vw, 12px) !important;
+font-family: var(--body) !important;
+    min-width: 130px;
+    font-weight: 500;
+        white-space: nowrap;
+}
+.nav-test:hover {
+    background: var(--cream);   /* Màu nâu đậm hơn một chút khi rê chuột */
+    color: var(--brown)!important;
+}
+/* Mặc định trên máy tính thì ẩn nút 3 gạch đi */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cream);
+    transition: 0.3s;
+}
+
+/* Khi màn hình nhỏ hơn 768px (Điện thoại) */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Hiện nút 3 gạch trên điện thoại */
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px; /* Nằm ngay dưới navbar */
+        left: -100%; /* Giấu menu sang bên trái màn hình */
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: #000000;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà */
+    }
+    .nav-links a {
+        font-size: 30px; /* Bạn có thể tăng giảm số này (ví dụ 18px, 20px, 22px...) tùy ý */
+        font-weight: 500;
+    }
+    /* Class active sẽ được JS thêm vào khi bấm nút để trượt menu ra */
+    .nav-links.active {
+        left: 0; 
+    }
+}
+/* ==================================================
+   HERO
+================================================== */
+/* Thay thế .hero-section bằng tên class thực tế của phần banner/hero ngay dưới menu nhà bạn */
+
+.hero {
+padding-top:80px;
+    min-height: 630px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(189, 145, 113, .20),
+            transparent 30%
+        ),
+        #0e0a07;
+
+    color: var(--cream);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    text-align: center;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 60px;
+
+}
+
+
+.hero h1 {
+
+    font-family: var(--display);
+
+    font-size: clamp(
+        60px,
+        7vw,
+        82px
+    );
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 100px;
+}
+
+
+.hero-subtitle {
+
+    color: #B8AFA5;
+
+    font-size: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    padding: 12px 19px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.btn span {
+
+    font-size: 14px;
+
+}
+
+
+.btn-brown {
+
+    background: var(--brown);
+
+    color: var(--darkbrown);
+
+    border-radius: 30px;
+
+    margin-top: 18px;
+
+}
+
+
+.btn-brown:hover {
+
+    background: #d0a486;
+
+}
+
+
+/* Hero pieces */
+
+.hero-piece {
+
+    position: absolute;
+
+    z-index: 2;
+
+    color: var(--cream);
+
+    opacity: .85;
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+}
+
+
+.piece-1 {
+
+    top: 80px;
+
+    left: 20%;
+
+    font-size: 75px;
+
+    transform: rotate(-22deg);
+
+}
+
+
+.piece-2 {
+
+    top: 65px;
+
+    right: 18%;
+
+    font-size: 60px;
+    transform: rotate(21deg);
+}
+
+
+.piece-3 {
+
+    bottom: 65px;
+
+    left: 18%;
+
+    font-size: 50px;
+
+    transform: rotate(-12deg);
+
+}
+
+
+.piece-4 {
+
+    bottom: 68px;
+
+    right: 19%;
+
+    font-size: 60px;
+    transform: rotate(15deg);
+}
+
+.piece-5 {
+
+    bottom: 205px;
+
+    right: 5%;
+
+    font-size: 60px;
+    transform: rotate(-15deg);
+}
+.piece-6 {
+
+    top: 240px;
+
+    left: 7%;
+
+    font-size: 45px;
+
+    transform: rotate(25deg);
+
+}
+
+.hero-main-piece {
+
+    position: absolute;
+
+    z-index: 1;
+
+    bottom: -25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: 240px;
+
+    color: #d8d1c8;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 45px rgba(255,255,255,.18);
+
+}
+
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.intro {
+
+    min-height: 300px;
+
+    display: flex;
+
+    text-align: center;
+
+}
+
+
+.intro-inner {
+
+    max-width: 690px;
+
+}
+
+
+.intro h2 {
+padding-top: 70px;
+    font-family: var(--display);
+    color: var(--darkbrown);
+    font-size: 45px;
+
+    line-height: 1;
+    letter-spacing: -.5px;
+
+}
+
+
+.intro p {
+
+    max-width: 510px;
+
+    margin: 25px auto 0;
+
+    color: #B28F76;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==================================================
+   WHY MOVÉ
+================================================== */
+
+.why-move.section-black {
+    min-height: 470px;
+    display: flex;
+    flex-direction: column; /* Hoặc row tùy cấu trúc */
+    justify-content: center;
+}
+
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        .7fr
+        1.25fr;
+
+    gap: 75px;
+    align-items: center;
+
+}
+
+
+.why-visual {
+width: 100%;          /* Ảnh sẽ tự co giãn theo khung chứa của nó */
+    max-width: 400px;     /* 👈 GIỚI HẠN CHIỀU RỘNG TỐI ĐA: Bạn có thể tăng/giảm số này (ví dụ 350px, 500px...) để ảnh nhỏ lại hoặc to lên theo ý muốn */
+    height: auto;         /* Giữ nguyên tỷ lệ chuẩn của ảnh, không bị méo */
+    object-fit: cover;
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.why-content h2 {
+
+    font-family: var(--display);
+
+    font-size: clamp(26px, 4vw, 40px);
+
+    font-weight: 400;
+
+    margin-bottom: 35px;
+    color: var(--cream);
+
+}
+
+
+.why-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.why-item {
+
+    display: grid;
+
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+
+}
+
+
+.why-number {
+
+    color: var(--brown);
+
+    font-size: clamp(14px, 1.5vw, 17px);;
+
+    padding-top: 2px;
+
+}
+
+
+.why-item p {
+
+   color: var(--cream);
+   font-weight: 200;
+    font-size: clamp(14px, 1.8vw, 16px);
+    line-height: 1.65;
+letter-spacing: 1px;
+}
+
+.why-item strong {
+ font-weight: 700;
+    color: var(--cream);
+}
+
+
+/* ==================================================
+   COURSES
+================================================== */
+
+.courses {
+
+    padding: 65px 0 70px;
+
+}
+
+
+.section-heading {
+
+    margin-bottom: 38px;
+
+}
+
+
+.section-heading.center {
+
+    text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: var(--display);
+    color: var(--darkbrown);
+    font-size: 50px;
+    line-height: 1.05;
+
+    letter-spacing: 1px;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 15px;
+
+    color: #B28F76;
+
+    font-size: 15px;
+
+}
+
+
+.course-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px 40px;
+
+}
+
+
+.course-card {
+
+    min-width: 0;
+
+}
+
+
+.course-image {
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    aspect-ratio: 2;
+
+    background: #D8D0C4;
+
+}
+
+
+.course-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .45s ease;
+
+}
+
+
+.course-card:hover
+.course-image img {
+
+    transform: scale(1.06);
+
+}
+
+
+.course-info {
+
+    padding-top: 11px;
+
+}
+
+
+.course-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.course-title-row h3 {
+
+    font-family: var(--display);
+
+    font-size: 23px;
+
+    font-weight: 700;
+    color: var(--darnkbrown);
+}
+
+
+.course-title-row span {
+
+    font-size: 12px;
+
+    color: #B49A85;
+
+}
+
+
+.course-info p {
+
+    color: var(--darnkbrown);
+    font-size: 12px;
+
+    line-height: 1.6;
+    font-weight: 300;
+    margin-top: 5px;
+
+    max-width: 700px;
+
+}
+
+
+.course-link {
+
+    display: inline-block;
+
+    background: var(--brown);
+
+    color: var(--darnkbrown);
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    padding: 5px 9px;
+
+    margin-top: 8px;
+transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.course-link:hover {
+    background:var(--darkbrown) ; /* Thay đổi mã màu này thành màu đậm hơn hoặc sáng hơn tùy ý */
+    color: var(--brown);      /* Đổi màu chữ nếu muốn (ví dụ thành màu trắng) */
+    transform: translateY(-2px); /* Dịch chuyển nút nhích lên trên 2px */
+}
+/* ==================================================
+   STATEMENT
+================================================== */
+
+.statement {
+
+    padding: 65px 0 70px;
+
+}
+
+
+.statement-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+}
+
+.eyebrow {
+     font-size: 13px;
+     color: var(--brown);
+     letter-spacing: 1px;
+}
+
+
+.statement-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia làm 2 cột bằng nhau */
+    gap: 40px; /* Khoảng cách giữa cột trái và cột phải */
+position: relative; /* 👈 Đặt làm mốc định vị */
+    /* Các thuộc tính cũ của bạn (như display grid/flex nếu có thì bỏ đi để tránh xung đột) */
+    min-height: 150px;
+    align-items: end;
+}
+.statement-note {
+
+    color: #AAA098;
+
+    font-size: 12px;
+
+    max-width: 220px;
+position: absolute;  /* 👈 Tách khỏi luồng thông thường để tự do di chuyển */
+
+    right: 0;
+    line-height: 1.5;
+
+}
+.statement h2 {
+
+    font-family: var(--display);
+
+    font-size: clamp(
+        42px,
+        6vw,
+        70px
+    );
+
+    font-weight: 500;
+
+    line-height: .88;
+
+    letter-spacing: -2px;
+
+    margin-top: 10px;
+
+}
+
+
+.quotes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+
+    margin-top: 55px;
+}
+.quote{
+      border-top: 0.2px solid #AAA098;
+      transition: transform 0.3s ease,
+}
+
+.quote p {
+
+    color: var(--cream);
+
+    font-size: 14px;
+letter-spacing:1px;
+    line-height: 1.65;
+padding-top:15px;
+}
+
+
+.quote span {
+
+    display: block;
+
+    margin-top: 17px;
+
+    color: #837C75;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+
+}
+.quote:hover{
+    transform: scale(1.05);
+}
+
+
+/* ==================================================
+   TEST CTA
+================================================== */
+
+.test-cta {
+
+    background: var(--brown);
+
+    text-align: center;
+
+    padding: 45px 0 0 0;
+min-height: 270px;
+}
+
+
+.test-cta-inner {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+}
+
+
+.test-cta h2 {
+
+    font-family: var(--display);
+
+    font-size: 50px;
+
+    line-height: 1.05;
+color:var (--darkbrown);
+    letter-spacing: 1px;
+    max-width: 1000px;
+}
+
+
+.test-cta p {
+
+    color: var(--cream);;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 23px;
+
+}
+
+.btn-cream {
+
+    background: var(--cream);
+
+    color: var(--darkbrown);
+
+    border-radius: 30px;
+
+    margin-top: 30px;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+
+    background: var(--black);
+
+    color: var(--cream);
+
+    padding: 50px 6% 18px;
+
+}
+
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        .8fr
+        .9fr;
+
+    gap: 40px;
+align-items: start;
+    padding-bottom: 35px;
+
+}
+
+
+.footer-logo {
+height: auto; /* Bạn có thể tăng hoặc giảm số này cho cân đối với thanh menu */
+    width: 200px;
+display: block; /* Biến ảnh thành khối riêng để dễ kiểm soát lề */
+    margin-bottom: 10px;
+    margin-top: -50px;
+    margin-left: -30px;
+}
+
+.footer-description {
+
+    color: #9C958E;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    max-width: 350px;
+
+    margin-top: 10px;
+
+}
+
+
+.footer-column h4 {
+
+    color: var(--cream);
+
+    font-family: var(--display);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    margin-bottom: 14px;
+
+}
+
+
+.footer-column a {
+
+    display: block;
+
+    color: #A49D95;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+
+    transition: color .2s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: var(--cream);
+
+}
+
+
+.footer-bottom {
+    font-family: var(--display);
+    border-top:
+        1px solid
+        rgba(241,236,225,.18);
+
+    padding-top: 13px;
+
+    display: flex;
+
+    justify-content: center;
+
+    color:var(--cream);
+
+    font-size: 10px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+
+        gap: 17px;
+
+    }
+
+
+    .nav-links a {
+
+        font-size: 8px;
+
+    }
+
+
+    .nav-test {
+
+        padding: 8px 11px;
+
+    }
+
+
+    .hero {
+
+        min-height: 475px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 58px;
+
+    }
+
+
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .why-visual {
+
+        order: 2;
+
+    }
+
+
+    .why-content {
+
+        order: 1;
+
+    }
+
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section-inner {
+
+        width: 88%;
+
+    }
+
+
+    .navbar {
+
+        height: 68px;
+
+        padding: 0 20px;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: 455px;
+
+    }
+
+
+    .hero-content {
+
+        padding-top: 55px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 53px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .hero-main-piece {
+
+        font-size: 190px;
+
+    }
+
+
+    .piece-1 {
+
+        left: 15%;
+
+    }
+
+
+    .piece-2 {
+
+        right: 12%;
+
+    }
+
+
+    .intro {
+
+        min-height: 235px;
+
+    }
+
+
+    .intro h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .why-move {
+
+        padding: 55px 0;
+
+    }
+
+
+    .why-grid {
+
+        gap: 20px;
+
+    }
+
+
+    .mini-board {
+
+        width: 230px;
+
+    }
+
+
+    .course-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+
+    }
+
+
+    .course-image {
+
+        aspect-ratio: 1.6;
+
+    }
+
+
+    .quotes {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        margin-top: 40px;
+
+    }
+
+
+    .statement h2 {
+
+        font-size: 51px;
+
+    }
+
+
+    .footer-top {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 20px;
+
+    }
+
+
+    .footer-top > div:first-child {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+}
+
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+
+        font-size: 47px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 8px;
+
+    }
+
+
+    .hero-main-piece {
+
+        font-size: 165px;
+
+    }
+
+
+    .piece-1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .piece-2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .piece-3 {
+
+        font-size: 31px;
+
+    }
+
+
+    .piece-4 {
+
+        font-size: 29px;
+
+    }
+
+
+    .why-content h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .statement h2 {
+
+        font-size: 45px;
+
+    }
+
+
+    .footer-top {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

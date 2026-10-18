@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A | MOVÉ</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/qa.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="qa">
+
+  <!-- Navbar dùng component có sẵn -->
+  <div id="navbar"></div>
+
+  <main class="qa-page">
+
+    <!-- HERO -->
+    <section class="qa-hero">
+      <div class="qa-hero-inner">
+        <p class="qa-eyebrow">
+          <span class="qa-eyebrow-line"></span>
+          MOVÉ / SUPPORT
+        </p>
+
+        <h1>
+          Bạn thắc mắc<br>
+          <span>MOVÉ giải đáp.</span>
+        </h1>
+
+        <p class="qa-hero-desc">
+          Dù bạn mới bắt đầu hay đang tìm bước đi tiếp theo,
+          MOVÉ sẽ giúp bạn hiểu rõ hơn trước khi bắt đầu hành trình.
+        </p>
+
+        <div class="qa-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 4.5 4.5"></path>
+          </svg>
+
+          <input
+            type="search"
+            id="qaSearch"
+            placeholder="Tìm câu hỏi của bạn..."
+            aria-label="Tìm câu hỏi"
+          >
+
+          <button
+            type="button"
+            id="clearSearch"
+            class="qa-clear"
+            aria-label="Xóa nội dung tìm kiếm"
+            hidden
+          >
+            ×
+          </button>
+        </div>
+
+        <p class="qa-search-hint">
+          Gợi ý: khóa học, trình độ, thanh toán...
+        </p>
+      </div>
+
+      <div class="qa-hero-index" aria-hidden="true">
+        <span>Q</span>
+        <span class="qa-index-dot">.</span>
+        <span>A</span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="qa-content" id="questions">
+      <div class="qa-section-heading">
+        <div>
+          <p class="qa-eyebrow">LET'S CLEAR THINGS UP</p>
+          <h2>Giải đáp <em>thắc mắc</em></h2>
+        </div>
+
+        <p class="qa-section-note">
+          Chưa cần biết hết mọi thứ.<br>
+          Chỉ cần bắt đầu từ câu hỏi đầu tiên.
+        </p>
+      </div>
+
+      <!-- Bộ lọc danh mục -->
+      <div class="qa-filters" role="group" aria-label="Lọc câu hỏi">
+        <button class="qa-filter active" data-category="all" aria-pressed="true">
+          Tất cả 
+        </button>
+
+        <button class="qa-filter" data-category="chung" aria-pressed="false">
+          Chung
+        </button>
+
+        <button class="qa-filter" data-category="khoahoc" aria-pressed="false">
+          Khóa học
+        </button>
+
+        <button class="qa-filter" data-category="thanhtoan" aria-pressed="false">
+          Thanh toán
+        </button>
+
+        <button class="qa-filter" data-category="hoctap" aria-pressed="false">
+          Học tập
+        </button>
+      </div>
+
+      <div class="qa-list" id="qaList">
+
+        <!-- NHÓM: CHUNG -->
+        <article class="qa-item" data-category="chung">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">01</span>
+            <span class="qa-question-text">MOVÉ là gì?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                MOVÉ là thương hiệu học cờ vua trực tuyến dành cho những
+                người muốn khám phá bộ môn này theo cách hiện đại và dễ tiếp cận.
+                Tại MOVÉ, bạn không cần phải giỏi sẵn mới có thể bắt đầu.
+                Mỗi người đều có thể tìm thấy nhịp độ và cách chơi phù hợp với mình.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="chung">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">02</span>
+            <span class="qa-question-text">Tôi chưa biết chơi cờ vua, có học được không?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Hoàn toàn được. Các khóa học được chia theo trình độ,
+                bắt đầu từ những kiến thức cơ bản nhất như cách di chuyển
+                của từng quân cờ. Bạn có thể làm quen từng bước mà không
+                cần áp lực phải biết chơi từ trước.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="chung">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">03</span>
+            <span class="qa-question-text">MOVÉ phù hợp với những ai?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                MOVÉ hướng đến những bạn trẻ yêu thích trò chơi trí tuệ,
+                muốn thử sức với cờ vua hoặc tìm một sở thích mới.
+                Dù bạn là người mới hay đã có nền tảng, bạn đều có thể
+                lựa chọn khóa học phù hợp với trình độ của mình.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- NHÓM: KHÓA HỌC -->
+        <article class="qa-item" data-category="khoahoc">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">04</span>
+            <span class="qa-question-text">MOVÉ hiện có những khóa học nào?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                MOVÉ xây dựng lộ trình học theo từng cấp độ, từ Nhập môn,
+                Cơ bản, Trung cấp đến Nâng cao. Mỗi khóa tập trung vào
+                những kiến thức và kỹ năng phù hợp với trình độ của người học.
+              </p>
+              <a class="qa-inline-link" href="courses.html">
+                Khám phá các khóa học <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="khoahoc">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">05</span>
+            <span class="qa-question-text">Làm sao để chọn đúng khóa học?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Bạn có thể tham khảo nội dung và yêu cầu đầu vào của từng khóa.
+                Nếu chưa biết mình đang ở trình độ nào, hãy thử bài kiểm tra
+                trình độ để nhận gợi ý khóa học phù hợp hơn.
+              </p>
+              <a class="qa-inline-link" href="test.html">
+                Kiểm tra trình độ <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="khoahoc">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">06</span>
+            <span class="qa-question-text">Tôi có thể xem nội dung khóa học trước khi đăng ký không?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Có. Bạn có thể xem thông tin giới thiệu, nội dung,
+                trình độ phù hợp và các thông tin liên quan trên trang
+                khóa học trước khi quyết định đăng ký.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- NHÓM: THANH TOÁN -->
+        <article class="qa-item" data-category="thanhtoan">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">07</span>
+            <span class="qa-question-text">Học phí của các khóa học được tính như thế nào?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Học phí phụ thuộc vào khóa học và chương trình bạn lựa chọn.
+                Bạn có thể xem mức phí cụ thể tại trang khóa học tương ứng
+                hoặc liên hệ MOVÉ để được giải đáp thêm.
+              </p>
+              <a class="qa-inline-link" href="courses.html">
+                Xem khóa học và học phí <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="thanhtoan">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">08</span>
+            <span class="qa-question-text">MOVÉ có chương trình ưu đãi không?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Các chương trình ưu đãi có thể thay đổi theo từng thời điểm.
+                Bạn hãy theo dõi thông tin trên website để cập nhật các
+                chương trình dành cho học viên mới, giới thiệu bạn bè
+                hoặc đăng ký nhiều khóa học.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- NHÓM: HỌC TẬP -->
+        <article class="qa-item" data-category="hoctap">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">09</span>
+            <span class="qa-question-text">Tôi cần chuẩn bị gì để học cờ vua online?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Bạn nên chuẩn bị máy tính hoặc thiết bị có thể truy cập Internet,
+                đường truyền ổn định và không gian học tương đối yên tĩnh.
+                Những hướng dẫn cụ thể sẽ tùy thuộc vào hình thức của khóa học.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="hoctap">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">10</span>
+            <span class="qa-question-text">Nếu học chậm hơn người khác thì sao?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Không sao cả. Mỗi người có tốc độ tiếp thu khác nhau.
+                Điều quan trọng là bạn hiểu được điều mình đang học và
+                có cơ hội luyện tập thường xuyên. Hãy xem mỗi ván cờ
+                là một cơ hội để thử nghiệm và tiến bộ theo cách riêng.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="qa-item" data-category="hoctap">
+          <button class="qa-question" aria-expanded="false">
+            <span class="qa-number">11</span>
+            <span class="qa-question-text">Tôi có thể liên hệ với MOVÉ khi cần hỗ trợ không?</span>
+            <span class="qa-toggle" aria-hidden="true">♙</span>
+          </button>
+
+          <div class="qa-answer" hidden>
+            <div class="qa-answer-inner">
+              <p>
+                Có. Nếu bạn cần giải đáp về khóa học, lộ trình hoặc đăng ký,
+                hãy sử dụng kênh liên hệ được cung cấp trên website.
+                MOVÉ sẽ hỗ trợ bạn tìm hiểu thông tin cần thiết trước khi bắt đầu.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Trạng thái không có kết quả -->
+      <div class="qa-empty" id="qaEmpty" hidden>
+        <span class="qa-empty-mark">?</span>
+        <h3>Chưa tìm thấy câu trả lời</h3>
+        <p>
+          Thử một từ khóa khác hoặc xem tất cả câu hỏi nhé.
+        </p>
+        <button type="button" id="showAllQuestions">
+          Xem tất cả câu hỏi <span>↗</span>
+        </button>
+      </div>
+
+      <div class="qa-count" id="qaCount" aria-live="polite">
+        Đang hiển thị 11 câu hỏi
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="qa-contact">
+      <div class="qa-contact-top">
+        <span>STILL CURIOUS?</span>
+        <span>YOUR NEXT MOVE STARTS HERE.</span>
+      </div>
+
+      <div class="qa-contact-main">
+        <div>
+          <p class="qa-eyebrow">WE'RE HERE TO HELP</p>
+          <h2>Vẫn còn điều<br><em>muốn hỏi?</em></h2>
+        </div>
+
+        <div class="qa-contact-side">
+          <p>
+            Không phải mọi câu hỏi đều có sẵn câu trả lời.
+            Hãy kết nối với MOVÉ để tìm hiểu thêm nhé.
+          </p>
+          <a href="mailto:movechess@gmail.com" class="qa-contact-link">
+            Liên hệ MOVÉ <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="qa-contact-bottom">
+        <span>MAKE YOUR MOVE.</span>
+        <span>MOVÉ ©</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer dùng component có sẵn -->
+  <div id="footer"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/qa.js"></script>
+</body>
+</html>

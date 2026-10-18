@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký khóa học | MOVÉ</title>
+
+    <!-- CSS chung -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CSS riêng trang đăng ký -->
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+
+    <main class="register-page">
+
+        <!-- =====================================
+             LEFT — INTRO
+        ====================================== -->
+        <section class="register-intro">
+<div class="register-board-wrapper">
+
+                <div class="register-board">
+
+                    <!-- Row 1 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 2 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 3 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 4 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 5 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 6 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 7 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                    <!-- Row 8 -->
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+
+                </div>
+                </div>
+            <p class="register-eyebrow">
+                MOVÉ · REGISTRATION
+            </p>
+
+            <h1>
+                ĐẾN LƯỢT<br>
+BẠN<br>
+RA QUÂN.
+            </h1>
+
+            <p class="register-description">
+                Điền thông tin bên cạnh để bắt đầu hành trình
+                học cờ vua cùng MOVÉ.
+            </p>
+
+            <div class="register-chess">
+                ♞
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             RIGHT — FORM
+        ====================================== -->
+        <section class="register-form-section">
+
+            <div class="register-form-wrapper">
+
+                <p class="form-label">
+                    THÔNG TIN ĐĂNG KÝ
+                </p>
+
+                <h2>
+                    Bắt đầu từ đây
+                </h2>
+
+                <p class="form-description">
+                    Vui lòng điền đầy đủ thông tin để MOVÉ
+                    có thể liên hệ và xác nhận đăng ký của bạn.
+                </p>
+
+
+                <form id="registerForm" novalidate>
+
+                    <!-- KHÓA HỌC -->
+                    <div class="form-group">
+
+                        <label for="course">
+                            KHÓA HỌC
+                        </label>
+
+                        <input
+                            type="text"
+                            id="course"
+                            name="course"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <!-- HỌ VÀ TÊN -->
+                    <div class="form-group">
+
+                        <label for="name">
+                            HỌ VÀ TÊN
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Nhập họ và tên"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <small class="form-error" id="nameError"></small>
+
+                    </div>
+
+
+                    <!-- SỐ ĐIỆN THOẠI -->
+                    <div class="form-group">
+
+                        <label for="phone">
+                            SỐ ĐIỆN THOẠI
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Nhập số điện thoại"
+                            autocomplete="tel"
+                            inputmode="numeric"
+                            required
+                        >
+
+                        <small class="form-error" id="phoneError"></small>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <small class="form-hint">
+                            Email dùng để nhận thông tin xác nhận đăng ký.
+                        </small>
+
+                        <small class="form-error" id="emailError"></small>
+
+                    </div>
+
+
+                    <!-- TUỔI -->
+                    <div class="form-group">
+
+                        <label for="age">
+                            TUỔI
+                        </label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            placeholder="Nhập tuổi"
+                            min="5"
+                            max="100"
+                            inputmode="numeric"
+                            required
+                        >
+
+                        <small class="form-error" id="ageError"></small>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <button
+                        type="submit"
+                        class="register-submit"
+                        id="registerSubmit"
+                    >
+                        <span id="submitText">
+                            ĐĂNG KÝ NGAY →
+                        </span>
+
+                        <span
+                            id="submitLoading"
+                            class="submit-loading"
+                        >
+                            ĐANG GỬI...
+                        </span>
+                    </button>
+
+
+                    <!-- SUCCESS -->
+                    <div
+                        class="register-success"
+                        id="registerSuccess"
+                        aria-hidden="true"
+                    >
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            ĐĂNG KÝ THÀNH CÔNG
+                        </h3>
+
+                        <p>
+                            Thông tin đăng ký đã được ghi nhận.
+                            Email xác nhận sẽ được gửi đến email của bạn.
+                        </p>
+                    </div>
+
+
+                    <!-- ERROR GENERAL -->
+                    <div
+                        class="register-general-error"
+                        id="registerGeneralError"
+                    ></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+
+    <!-- EmailJS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <!-- JS chung -->
+    <script src="../js/main.js"></script>
+
+    <!-- JS trang đăng ký -->
+    <script src="../js/register.js"></script>
+
+</body>
+</html>
