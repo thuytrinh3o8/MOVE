@@ -130,14 +130,6 @@ function setupMobileMenu() {
 
         });
 }
-function setImagePaths() {
-    const root = getRootPath();
-
-    document.querySelectorAll("[data-image]").forEach(image => {
-        const imagePath = image.dataset.image;
-        image.src = `${root}images/${imagePath}`;
-    });
-}
 
 /* =========================================
    XỬ LÝ LINK TRONG NAVBAR + FOOTER
