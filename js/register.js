@@ -489,7 +489,7 @@ try {
 
     // Bước 1: Lưu thông tin đăng ký vào Supabase
     const response = await fetch(
-        "http://localhost:3000/api/course-registrations",
+        "https://move-guyg.onrender.com/api/course-registrations",
         {
             method: "POST",
             headers: {

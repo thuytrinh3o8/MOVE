@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         sessionStorage.getItem("move_checkout_email") || ""
     ).trim().toLowerCase();
 
-    const API_URL = "http://localhost:3000/api";
+const API_URL = "https://move-guyg.onrender.com/api";
 
     const formatPrice = (price) =>
         new Intl.NumberFormat("vi-VN").format(price) + "đ";

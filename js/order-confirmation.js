@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         const response = await fetch(
-            `http://localhost:3000/api/course-orders/${encodeURIComponent(orderId)}?email=${encodeURIComponent(email)}`
+            `https://move-guyg.onrender.com/api/course-orders/${encodeURIComponent(orderId)}?email=${encodeURIComponent(email)}`
         );
 
         const result = await response.json();
