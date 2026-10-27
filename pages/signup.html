@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký thành viên | MOVÉ</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="login-page signup-page">
+
+        <!-- LEFT: BRAND -->
+        <section class="login-visual signup-visual">
+            <div class="login-visual-top">
+                <span class="login-index">NEW MEMBER / 002</span>
+            </div>
+
+            <div class="login-hero signup-hero">
+                <p class="login-kicker">THE GAME IS YOURS TO SHAPE</p>
+
+                <h1>
+                    START<br>
+                    YOUR<br>
+                    <span>GAME.</span>
+                </h1>
+
+                <p class="login-description">
+                    Một hành trình mới bắt đầu từ một nước đi.
+                    Tạo tài khoản và khám phá thế giới cờ vua cùng MOVÉ.
+                </p>
+            </div>
+
+            <div class="login-chess-art" aria-hidden="true">
+                <div class="login-board"></div>
+                <div class="login-knight">♞</div>
+                <span class="login-board-label">YOUR MOVE. YOUR JOURNEY.</span>
+            </div>
+
+            <div class="login-visual-bottom">
+                <span>LEARN WITH PURPOSE.</span>
+                <span>© MOVÉ</span>
+            </div>
+        </section>
+
+        <!-- RIGHT: SIGNUP FORM -->
+        <section class="login-panel signup-panel">
+            <div class="login-panel-inner signup-inner">
+
+                <div class="login-heading signup-heading">
+                    <p class="login-label">BECOME A MEMBER</p>
+                    <h2>Tạo tài khoản<br>của bạn.</h2>
+                    <p>
+                        Gia nhập MOVÉ để bắt đầu hành trình
+                        học tập và rèn luyện tư duy chiến thuật.
+                    </p>
+                </div>
+
+                <form id="signupForm" class="login-form signup-form" novalidate>
+
+                    <div class="login-field">
+                        <label for="signupName">HỌ VÀ TÊN</label>
+                        <input
+                            type="text"
+                            id="signupName"
+                            name="full_name"
+                            placeholder="Nhập họ và tên"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-field">
+                        <label for="signupEmail">ĐỊA CHỈ EMAIL</label>
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            name="email"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-field">
+                        <label for="signupPassword">MẬT KHẨU</label>
+
+                        <div class="login-password-wrap">
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                name="password"
+                                placeholder="Tối thiểu 8 ký tự"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="login-toggle"
+                                data-toggle-password="signupPassword"
+                                aria-label="Hiện mật khẩu"
+                            >HIỆN</button>
+                        </div>
+                    </div>
+
+                    <div class="login-field">
+                        <label for="signupConfirmPassword">
+                            XÁC NHẬN MẬT KHẨU
+                        </label>
+
+                        <div class="login-password-wrap">
+                            <input
+                                type="password"
+                                id="signupConfirmPassword"
+                                name="confirm_password"
+                                placeholder="Nhập lại mật khẩu"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="login-toggle"
+                                data-toggle-password="signupConfirmPassword"
+                                aria-label="Hiện mật khẩu"
+                            >HIỆN</button>
+                        </div>
+                    </div>
+
+                    <p
+                        id="signupError"
+                        class="login-message login-error"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+
+                    <p
+                        id="signupSuccess"
+                        class="login-message login-success"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                    <button
+                        type="submit"
+                        id="signupSubmit"
+                        class="login-submit"
+                    >
+                        <span id="signupSubmitText">TẠO TÀI KHOẢN</span>
+                        <span aria-hidden="true">↗</span>
+                    </button>
+
+                    <p class="login-security-note">
+                        <span aria-hidden="true">♟</span>
+                        Thông tin tài khoản được xử lý qua Supabase Auth.
+                    </p>
+                </form>
+
+                <div class="login-register">
+                    <span>Đã có tài khoản?</span>
+                    <a href="login.html">ĐĂNG NHẬP ↗</a>
+                </div>
+
+                <div class="login-panel-footer">
+                    <span>THINK. PLAN. MOVE.</span>
+                    <span>MOVÉ / 2026</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/signup.js"></script>
+</body>
+</html>

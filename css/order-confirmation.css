@@ -1,0 +1,424 @@
+
+:root {
+    --cream: #F1ECE1;
+    --black: #000000;
+    --brown: #BD9171;
+    --darkbrown: #3B2113;
+    --white: #FFFFFF;
+
+    --oc-muted: #76675D;
+    --oc-line: rgba(59, 33, 19, 0.15);
+}
+
+.order-confirmation-main,
+.order-confirmation-main * {
+    box-sizing: border-box;
+}
+
+.order-confirmation-main {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 100px 20px 50px;
+    background: var(--cream);
+    color: var(--darkbrown);
+    font-family: "DM Sans", sans-serif;
+}
+
+.order-confirmation-main::before,
+.order-confirmation-main::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+}
+
+.order-confirmation-main::before {
+    top: 35px;
+    left: -175px;
+    width: 290px;
+    height: 290px;
+    border: 1px solid rgba(189, 145, 113, 0.35);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 28px rgba(189, 145, 113, 0.07),
+        0 0 0 58px rgba(189, 145, 113, 0.05);
+}
+
+.order-confirmation-main::after {
+    right: -90px;
+    bottom: 40px;
+    width: 220px;
+    height: 220px;
+    background:
+        linear-gradient(
+            45deg,
+            rgba(59, 33, 19, 0.04) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(59, 33, 19, 0.04) 75%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(59, 33, 19, 0.04) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(59, 33, 19, 0.04) 75%
+        );
+    background-position: 0 0, 24px 24px;
+    background-size: 48px 48px;
+    transform: rotate(12deg);
+}
+
+
+.confirmation-wrap {
+    width: min(100%, 740px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+
+.confirmation-heading {
+    margin: 0px auto 20px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 14px;
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    width: 24px;
+    height: 1px;
+    flex: 0 0 24px;
+    background: var(--brown);
+    content: "";
+}
+
+.confirmation-heading h1 {
+    margin: 0;
+    color: var(--darkbrown);
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(32px, 5.5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 1.12;
+}
+
+.heading-note {
+    max-width: 470px;
+    margin: 15px auto 0;
+    color: var(--oc-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+.confirmation-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(26px, 5vw, 48px);
+    border: 1px solid rgba(59, 33, 19, 0.1);
+    border-radius: 3px;
+    background: var(--white);
+    box-shadow: 0 24px 70px rgba(59, 33, 19, 0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.confirmation-card::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: var(--brown);
+    content: "";
+}
+
+.success-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 16px; /* Đã giảm lề dưới của icon */
+    place-items: center;
+    border: 1px solid rgba(189, 145, 113, 0.55);
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--darkbrown);
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.confirmation-card > .eyebrow {
+    margin-bottom: 6px; /* Thu gọn khoảng cách dưới eyebrow */
+    text-align: center;
+}
+
+.confirmation-card h2 {
+    margin: 0 0 8px 0; /* Thu gọn lề dưới của tiêu đề h2 */
+    color: var(--darkbrown);
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.intro {
+    max-width: 520px;
+    margin: 0 auto 16px auto; /* Gom gọn margin, loại bỏ khoảng trống thừa */
+    color: var(--oc-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+    min-height:50px;
+    padding-bottom: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+#orderContent {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: 12px;
+}
+
+
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    margin-top: 0; /* Đưa về 0 để bám sát đoạn intro phía trên */
+    border-top: 1px solid var(--oc-line);
+    border-bottom: 1px solid var(--oc-line);
+}
+.label {
+    color: var(--oc-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 13px;
+    border: 1px solid rgba(189, 145, 113, 0.6);
+    border-radius: 2px;
+    background: var(--cream);
+    color: var(--darkbrown);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.details {
+    padding: 12px 0 4px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 13px 0;
+}
+
+.detail-row .value {
+    max-width: 62%;
+    color: var(--darkbrown);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.detail-row.total {
+    align-items: center;
+    margin-top: 8px;
+    padding: 20px 0 4px;
+    border-top: 1px solid var(--oc-line);
+}
+
+.detail-row.total .label {
+    color: var(--darkbrown);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detail-row.total .value {
+    color: var(--brown);
+    font-size: clamp(23px, 4vw, 30px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.notice {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--brown);
+    background: var(--cream);
+    color: #59463A;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    border: 1px solid var(--darkbrown);
+    border-radius: 2px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--darkbrown);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    border-color: var(--brown);
+    background: var(--brown);
+    color: var(--black);
+}
+
+.button-secondary {
+    background: var(--white);
+    color: var(--darkbrown);
+}
+
+.button-secondary:hover {
+    background: var(--cream);
+}
+
+.feedback {
+    margin: 22px 0 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(163, 59, 50, 0.22);
+    background: #fff8f6;
+    color: #8C3028;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.confirmation-footnote {
+    margin: 22px 0 0;
+    color: var(--oc-muted);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    text-align: center;
+}
+
+@media (max-width: 560px) {
+    .order-confirmation-main {
+        padding: 42px 15px 66px;
+    }
+
+    .confirmation-heading {
+        margin-bottom: 22px;
+    }
+
+    .heading-note {
+        font-size: 14px;
+    }
+
+    .confirmation-card {
+        padding: 28px 20px 24px;
+    }
+
+    .status {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .detail-row {
+        gap: 14px;
+    }
+
+    .detail-row .label {
+        max-width: 43%;
+    }
+
+    .detail-row .value {
+        max-width: 57%;
+        font-size: 13px;
+    }
+
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .order-confirmation-main *,
+    .order-confirmation-main *::before,
+    .order-confirmation-main *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

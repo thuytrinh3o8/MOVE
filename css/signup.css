@@ -1,0 +1,136 @@
+/* ========================================
+   MOVÉ — SIGNUP PAGE
+   Editorial chess concept · shared login design
+   Load after login.css
+======================================== */
+
+.signup-page {
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+}
+
+.signup-visual {
+  background: var(--login-darkbrown, #3B2113);
+  color: var(--login-cream, #F1ECE1);
+}
+
+.signup-hero h1 {
+  font-size: clamp(62px, 7.5vw, 108px);
+}
+
+.signup-panel {
+  padding-top: 34px;
+  padding-bottom: 34px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(189, 145, 113, 0.12), transparent 30%),
+    var(--login-cream, #F1ECE1);
+}
+
+.signup-inner {
+  max-width: 440px;
+}
+
+.signup-heading {
+  margin-top: 38px;
+}
+
+.signup-heading h2 {
+  font-size: clamp(34px, 3vw, 44px);
+}
+
+.signup-form {
+  margin-top: 26px;
+}
+
+.signup-form .login-field {
+  margin-bottom: 17px;
+}
+
+.signup-form .login-field input {
+  min-height: 50px;
+}
+
+.signup-form .login-submit {
+  margin-top: 4px;
+}
+
+.signup-form .login-security-note {
+  margin-top: 15px;
+}
+
+.signup-inner .login-register {
+  margin-top: 24px;
+  padding-top: 18px;
+}
+
+.signup-inner .login-panel-footer {
+  margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .signup-page {
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+  }
+
+  .signup-hero h1 {
+    font-size: clamp(54px, 7vw, 78px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .signup-page {
+    display: block;
+    min-height: auto;
+  }
+
+  .signup-visual {
+    min-height: 390px;
+  }
+
+  .signup-hero {
+    margin-top: 38px;
+  }
+
+  .signup-hero h1 {
+    font-size: clamp(60px, 14vw, 88px);
+  }
+
+  .signup-panel {
+    padding: 34px 24px 40px;
+  }
+
+  .signup-heading {
+    margin-top: 38px;
+  }
+
+  .signup-heading h2 {
+    font-size: 36px;
+  }
+
+  .signup-form {
+    margin-top: 28px;
+  }
+}
+/* MOVÉ SIGNUP — giữ viền input mảnh khi focus */
+.signup-form .login-field input:focus,
+.signup-form .login-field input:focus-visible,
+.signup-form .login-password-wrap input:focus,
+.signup-form .login-password-wrap input:focus-visible {
+    outline: none !important;
+    border: 1px solid rgba(59, 33, 19, 0.23) !important;
+    box-shadow: none !important;
+    background: var(--login-white, #FFFFFF);
+}
+
+/* Giữ nguyên khung input, không tạo viền ngoài khi focus */
+.signup-form .login-field:focus-within,
+.signup-form .login-password-wrap:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Giữ hiệu ứng hover nhẹ */
+.signup-form .login-field input:hover {
+    border-color: rgba(59, 33, 19, 0.45);
+}

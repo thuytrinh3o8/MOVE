@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOVÉ — Góc Cờ</title>
+
+    <!-- CSS dùng chung -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CSS riêng của trang Blog -->
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR dùng chung -->
+    <div id="navbar"></div>
+
+    <!-- HERO -->
+<section class="hero-editorial">
+    <!-- Khung viền tinh tế bao quanh section (Đặc trưng phong cách editorial) -->
+    <div class="editorial-frame"></div>
+
+    <!-- Chi tiết trang trí ánh sáng chìm nền -->
+    <div class="hero-bg-glow" aria-hidden="true"></div>
+
+    <!-- Các quân cờ trang trí được sắp đặt lại bố cục nghệ thuật -->
+    <div class="about-piece about-piece-two" aria-hidden="true">
+        ♞
+    </div>
+    <div class="about-piece about-piece-three" aria-hidden="true">
+        ♙
+    </div>
+
+    <!-- Nội dung cũ được bao bọc trong khối layout mới -->
+    <div class="hero-editorial-content">
+        <div class="eyebrow">
+            <span class="line-deco"></span>
+            Góc cờ MOVÉ
+            <span class="line-deco"></span>
+        </div>
+
+        <h1>
+            KHÁM PHÁ<br>
+            <em>CỜ VUA.</em>
+        </h1>
+
+        <div class="hero-bottom">
+            <p class="hero-description">
+                Những câu chuyện, kiến thức và tin tức xoay quanh 64 ô vuông, từ những điều cơ bản đến những diễn biến mới nhất trên bàn cờ.
+            </p>
+
+            <div class="hero-note">
+                <span>Đọc</span>
+                <span class="dot">·</span>
+                <span>Khám phá</span>
+                <span class="dot">·</span>
+                <span>Chơi</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="featured">
+        <div class="section-label">CÓ THỂ BẠN CHƯA BIẾT</div>
+
+        <div class="featured-layout">
+            <div class="featured-content">
+
+
+                <h2 class="featured-title">
+                    TẠI SAO<br>
+                    <em>QUÂN MÃ</em><br>
+                    CÓ THỂ <em>NHẢY?</em>
+                </h2>
+
+                <p class="featured-text">
+                    Không giống bất kỳ quân cờ nào khác,
+                    Mã có một cách di chuyển rất đặc biệt.
+                    Nhưng tại sao luật chơi lại cho phép
+                    quân cờ này "nhảy" qua những quân khác?
+                </p>
+
+                <a href="https://tuoitre.vn/tai-sao-quan-ma-trong-co-vua-lai-di-hinh-chu-l-va-co-dac-quyen-nhay-qua-dau-20260216165048851.htm" target="_blank" rel="noopener noreferrer" class="read-more">
+                    Xem chi tiết →
+                </a>
+            </div>
+
+            <div class="featured-image">
+                <div class="featured-circle"></div>
+                <div class="featured-piece">♞</div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- LATEST ARTICLES -->
+    <section class="latest">
+        <div class="latest-heading">
+            <div>
+                <div class="section-label">Từ Góc Cờ MOVÉ</div>
+
+                <h2>
+                    BÀI VIẾT<br>
+                    <em>MỚI NHẤT</em>
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="article-grid">
+            <a class="article-card" onclick="toggleArticle(this)">
+                <div class="article-image">
+                    <div class="article-piece">♞</div>
+                </div>
+
+                <div class="article-category">
+                    Góc chơi cờ · 5 phút đọc
+                </div>
+
+                <h3>
+                    Nước đi nào có thể khiến bạn thua chỉ sau 2 nước?
+                </h3>
+<div class="article-detail">
+        <p>Đây gọi là "Fool's Mate" (chiếu hết của kẻ ngốc) — ván cờ ngắn nhất có thể dẫn đến chiếu hết, chỉ với 2 nước đi mỗi bên. Nó xảy ra khi quân Trắng mở những nước đi làm lộ hoàn toàn đường chéo tới Vua, cho phép Hậu đen chiếu hết ngay lập tức.</p>
+        <p>Đây là lý do vì sao buổi học đầu tiên của người mới luôn nhấn mạnh việc giữ an toàn cho Vua ngay từ những nước đi đầu.
+</p>
+    </div>
+                <div class="article-link">Đọc bài viết →</div>
+            </a>
+            <a class="article-card" onclick="toggleArticle(this)">
+                <div class="article-image">
+                    <div class="article-piece">♜</div>
+                </div>
+
+                <div class="article-category">
+                    Khám phá · 4 phút đọc
+                </div>
+
+                <h3>
+                    Elo là gì và ai đã phát minh ra nó?
+                </h3>
+<div class="article-detail">
+        <p>Hệ thống điểm Elo được đặt theo tên nhà vật lý người Mỹ gốc Hungary Arpad Elo, người phát triển nó vào thập niên 1960 để xếp hạng kỳ thủ cờ vua một cách công bằng hơn hệ thống cũ.</p>
+        <p>Ý tưởng cốt lõi rất đơn giản: thắng một người có Elo cao hơn mình thì được cộng nhiều điểm, thắng người Elo thấp hơn thì chỉ được cộng ít điểm. Ngày nay, Elo không chỉ dùng trong cờ vua mà còn được áp dụng trong nhiều môn thể thao và cả game điện tử.</p>
+    </div>
+                <div class="article-link">Đọc bài viết →</div>
+            </a>
+
+            <a class="article-card" onclick="toggleArticle(this)">
+                <div class="article-image">
+                    <div class="article-piece">♛</div>
+                </div>
+
+                <div class="article-category">
+                    Khám phá · 5 phút đọc
+                </div>
+
+                <h3>
+                    Quân Hậu từng là quân yếu nhất bàn cờ
+                </h3>
+<div class="article-detail">
+        <p>Nghe có vẻ khó tin, nhưng ở phiên bản cờ vua cổ tại Ấn Độ và Ba Tư, quân tương đương Hậu ngày nay (gọi là "Vizier") chỉ được đi 1 ô theo đường chéo mỗi lượt — yếu hơn cả quân Tốt.</p>
+        <p>Phải đến cuối thế kỷ 15 tại châu Âu, luật chơi mới thay đổi để Hậu có thể di chuyển tự do theo mọi hướng với khoảng cách bất kỳ, biến nó thành quân mạnh nhất bàn cờ như ngày nay.</p>
+    </div>
+                <div class="article-link">Đọc bài viết →</div>
+            </a>
+
+            <a class="article-card" onclick="toggleArticle(this)">
+                <div class="article-image">
+                    <div class="article-piece">♝</div>
+                </div>
+
+                <div class="article-category">
+                    Khám phá · 6 phút đọc
+                </div>
+
+                <h3>
+                    VÌ SAO BÀN CỜ VUA
+                    CÓ 64 Ô?
+                </h3>
+<div class="article-detail">
+        <p>Bàn cờ vua có 8 hàng và 8 cột, tạo thành 8×8 = 64 ô. Con số 8 không phải ngẫu nhiên: cờ vua bắt nguồn từ Chaturanga ở Ấn Độ khoảng thế kỷ 6, một trò chơi mô phỏng quân đội với 4 binh chủng (tượng, ngựa, xe, bộ binh).</p>
+        <p>Bàn cờ 8x8 đủ lớn để các binh chủng này di chuyển và đối đầu nhau một cách thú vị, nhưng vẫn đủ nhỏ để một ván đấu không kéo dài vô tận. Qua nhiều thế kỷ lan truyền sang Ba Tư, Ả Rập rồi châu Âu, kích thước 64 ô vẫn được giữ nguyên cho đến ngày nay.</p>
+    </div>
+                <div class="article-link">Đọc bài viết →</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="news">
+        <div class="news-top">
+            <div>
+                <div class="section-label">Cập nhật mới</div>
+
+                <h2>
+                    <em>TIN TỨC</em><br>
+                    CỜ VUA
+                </h2>
+            </div>
+
+            <p class="news-intro">
+                Những giải đấu, sự kiện và câu chuyện
+                đang được chú ý trong cộng đồng
+                cờ vua.
+            </p>
+        </div>
+
+        <div class="news-list">
+
+            <a href="https://vnexpress.net/nhung-cach-gian-lan-ky-quac-trong-co-vua-5065309.html" target="_blank" rel="noopener noreferrer" class="news-item">
+                <div class="news-date">22.04.2026</div>
+
+                <div class="news-content">
+                    <div class="news-category">Cộng đồng</div>
+
+                    <h3>
+                        Những chiêu gian lận kỳ quặc trong cờ vua.
+                    </h3>
+
+                    <p>
+                       Thiết bị rung, tín hiệu từ xa đến điện thoại giấu kín... các chiêu gian lận trong cờ vua ngày càng tinh vi theo bước tiến công nghệ
+                    </p>
+                </div>
+
+                <div class="news-arrow">↗</div>
+            </a>
+
+            <a href="https://vnexpress.net/carlsen-sindarov-khong-co-diem-yeu-se-thang-gukesh-5065037.html" target="_blank" rel="noopener noreferrer" class="news-item">
+                <div class="news-date">21.04.2026</div>
+
+                <div class="news-content">
+                    <div class="news-category">Khám phá</div>
+
+                    <h3>
+                        Carlsen: "Sindarov không có điểm yếu, sẽ thắng Gukesh"
+                    </h3>
+
+                    <p>
+                        Theo kỳ thủ số một thế giới Magnus Carlsen, Javokhir Sindarov có khả năng cao lật đổ Vua cờ Gukesh Dommaraju ở chung kết cờ vua thế giới.
+                    </p>
+                </div>
+
+                <div class="news-arrow">↗</div>
+            </a>
+
+            <a href="https://vnexpress.net/ky-thu-14-tuoi-tro-thanh-sieu-dai-kien-tuong-5064050.html" target="_blank" rel="noopener noreferrer" class="news-item">
+                <div class="news-date">18.04.2026</div>
+
+                <div class="news-content">
+                    <div class="news-category">Kỳ thủ</div>
+
+                    <h3>
+                        Kỳ thủ 14 tuổi trở thành Siêu đại kiện tướng
+                    </h3>
+
+                    <p>
+                        Kỳ thủ người Thổ Nhĩ Kỳ Yagiz Kaan Erdogmus chạm mốc Elo 2.700 ở tuổi 14, phá sâu kỷ lục của Vi Dịch (Wei Yi).
+                    </p>
+                </div>
+
+                <div class="news-arrow">↗</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- EDITORIAL -->
+    <section class="editorial">
+        <div class="editorial-grid">
+            <div class="editorial-number">64</div>
+
+            <div>
+                <div class="editorial-label">Góc nhìn</div>
+
+                <h2>
+                    CỜ VUA<br>
+                    KHÔNG CHỈ<br>
+                    LÀ <em>THẮNG.</em>
+                </h2>
+
+                <p>
+                    Đôi khi điều đáng nhớ nhất sau một
+                    ván cờ không phải là kết quả, mà là
+                    cách bạn suy nghĩ, lựa chọn, mắc sai
+                    lầm và bắt đầu lại.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+<section class="final-section">
+    <!-- Chi tiết trang trí: Đốm sáng spotlight ngầm trên nền đen -->
+    <div class="final-bg-glow" aria-hidden="true"></div>
+
+    <div class="final-content">
+        <div class="final-label">
+            <span class="label-line"></span>
+            Khám phá thêm
+        </div>
+
+        <h2>
+            BẠN ĐÃ<br>
+            SẴN SÀNG<br>
+            <em>CHƠI CHƯA?</em>
+        </h2>
+
+        <a href="courses.html" class="final-link">
+            <span>Khám phá khóa học</span>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+</section>
+
+    <!-- FOOTER dùng chung -->
+    <div id="footer"></div>
+
+    <!-- JavaScript dùng chung -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

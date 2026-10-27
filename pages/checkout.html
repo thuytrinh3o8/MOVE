@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thanh toán | MOVÉ</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="checkout-page">
+        <section class="checkout-card">
+            <p class="checkout-eyebrow">MOVÉ · CHECKOUT</p>
+
+            <h1>Hoàn tất đăng ký.</h1>
+
+            <p class="checkout-description">
+                Kiểm tra thông tin khóa học của bạn trước khi tiếp tục.
+            </p>
+
+            <div class="checkout-summary">
+                <p class="checkout-label">KHÓA HỌC ĐÃ CHỌN</p>
+                <h2 id="checkoutCourse">Đang tải khóa học...</h2>
+
+
+                <div class="checkout-divider"></div>
+
+                <p class="checkout-label">HỌC PHÍ</p>
+                <p class="checkout-price" id="checkoutPrice">
+                    Đang cập nhật
+                </p>
+            </div>
+
+            <div class="checkout-notice">
+                <strong>Chế độ thanh toán thử nghiệm</strong>
+                <p>
+                    Đây là giao diện demo. Hiện tại website chưa thu tiền
+                    và chưa xác nhận thanh toán thực tế.
+                </p>
+            </div>
+
+            <button type="button" id="demoPaymentButton">
+                TRẢI NGHIỆM THANH TOÁN DEMO →
+            </button>
+
+            <p id="checkoutMessage" class="checkout-message" aria-live="polite"></p>
+
+            <a class="checkout-back" href="courses.html">
+                 Quay lại danh sách khóa học
+            </a>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/checkout.js"></script>
+
+</body>
+</html>

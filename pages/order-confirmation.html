@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F1ECE1">
+    <meta name="description" content="Thông tin xác nhận đơn hàng tại MOVÉ.">
+
+    <title>Xác nhận đơn hàng | MOVÉ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/order-confirmation.css">
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/order-confirmation.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar dùng chung -->
+    <div id="navbar"></div>
+
+    <main class="order-confirmation-main">
+        <div class="confirmation-wrap">
+
+            <div class="confirmation-heading">
+                <p class="eyebrow">MOVÉ · ORDER CONFIRMATION</p>
+                <h1>Xác nhận đơn hàng</h1>
+                <p class="heading-note">
+                    Một bước nữa để bắt đầu hành trình khám phá cờ vua cùng MOVÉ.
+                </p>
+            </div>
+
+            <section class="confirmation-card" aria-labelledby="confirmationTitle">
+                <div class="success-icon" aria-hidden="true">✓</div>
+
+                <p class="eyebrow">ORDER CONFIRMATION</p>
+                <h2 id="confirmationTitle">Đơn hàng của bạn</h2>
+
+                <p class="intro" id="introMessage" aria-live="polite">
+                    Đang tải thông tin đơn hàng...
+                </p>
+
+                <div id="orderContent" class="hidden">
+                    <div class="status">
+                        <span class="label">Trạng thái đơn hàng</span>
+                        <span id="orderStatus" class="status-badge">
+                            Đang kiểm tra
+                        </span>
+                    </div>
+
+                    <div class="details">
+                        <div class="detail-row">
+                            <span class="label">Mã đơn hàng</span>
+                            <span class="value" id="orderId">—</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="label">Khóa học</span>
+                            <span class="value" id="courseName">—</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="label">Ngày tạo</span>
+                            <span class="value" id="createdAt">—</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="label">Giá gốc</span>
+                            <span class="value" id="originalPrice">—</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="label">Ưu đãi</span>
+                            <span class="value" id="discountAmount">—</span>
+                        </div>
+
+                        <div class="detail-row total">
+                            <span class="label">Tổng thanh toán</span>
+                            <span class="value" id="finalPrice">—</span>
+                        </div>
+                    </div>
+
+                    <div class="notice" id="orderNotice">
+                        Đơn hàng đang chờ thanh toán. Hiện tại MOVÉ chưa xác nhận bất kỳ giao dịch thanh toán nào.
+                    </div>
+
+                    <div class="actions">
+                        <a class="button button-primary" href="../pages/courses.html">
+                            KHÁM PHÁ CÁC KHÓA HỌC
+                        </a>
+
+                        <a class="button button-secondary" href="../index.html">
+                            VỀ TRANG CHỦ
+                        </a>
+                    </div>
+                </div>
+
+                <p id="errorMessage" class="feedback hidden" role="alert"></p>
+            </section>
+
+            <p class="confirmation-footnote">
+                MOVÉ — Make your move.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer dùng chung -->
+    <div id="footer"></div>
+</body>
+</html>

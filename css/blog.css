@@ -1,0 +1,834 @@
+
+/* =========================
+   RESET & VARIABLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cream: #F1ECE1;
+    --black: #000000;
+    --brown: #BD9171;
+    --light-brown: #d7bba5;
+    --darkbrown: #3B2113;
+    --gray: #77736d;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   EDITORIAL HERO - MOVÉ CHESS
+========================================= */
+
+.hero-editorial {
+    position: relative;
+    min-height: 680px;
+    padding: 80px 8% 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--cream);
+    overflow: hidden;
+}
+
+/* 1. Khung viền mỏng nghệ thuật cách điệu */
+.editorial-frame {
+    position: absolute;
+    inset: 25px;
+    border: 1px solid rgba(74, 52, 38, 0.12);
+    pointer-events: none;
+    z-index: 2;
+    margin-top: 80px;
+}
+
+/* 2. Vùng sáng spotlight nền */
+.hero-bg-glow {
+    position: absolute;
+    inset: 0;
+ mix-blend-mode: multiply; 
+    background: radial-gradient(circle at 50% 50%, rgba(221, 187, 164, 0.4), transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+    animation: bgBreathe 7s ease-in-out infinite alternate;
+}
+
+@keyframes bgBreathe {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+
+/* =========================================
+   TYPOGRAPHY & NỘI DUNG (Giữ nguyên nội dung cũ)
+========================================= */
+
+.hero-editorial-content {
+    position: relative;
+    z-index: 3;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--darkbrown);
+    opacity: 0.8;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Thanh line nhỏ trang trí hai bên eyebrow */
+.eyebrow .line-deco {
+    width: 25px;
+    height: 1px;
+    background: var(--brown);
+    opacity: 0.5;
+}
+
+.hero-editorial h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(60px, 9.5vw, 115px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+    color: var(--darkbrown);
+    font-weight: 400;
+    margin: 0 0 35px 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    opacity: 0;
+}
+
+/* Điểm nhấn chữ nghiêng màu nâu */
+.hero-editorial h1 em {
+    font-style: italic;
+    color: var(--brown);
+    font-weight: 400;
+}
+
+.hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+    opacity: 0;
+}
+
+.hero-description {
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--darkbrown);
+    letter-spacing: 0.8px;
+    opacity: 0.82;
+    margin: 0;
+}
+
+.hero-note {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--darkbrown);
+    opacity: 0.65;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-note .dot {
+    color: var(--brown);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CHI TIẾT TRANG TRÍ: QUÂN CỜ BỐ CỤC ĐỘC LẬP
+========================================= */
+
+.about-piece {
+    position: absolute;
+    color: var(--darkbrown);
+    font-family: Georgia, serif;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 20px 30px rgba(74, 52, 38, 0.1));
+}
+
+/* Quân Mã (Góc phải dưới, kích thước lớn làm nền chìm) */
+.about-piece-two {
+    font-size: clamp(100px, 16vw, 220px);
+    opacity: 0.35;
+    right: 5%;
+    bottom: 5%;
+    transform: rotate(15deg);
+    animation: pieceFloatRight 8s ease-in-out infinite;
+}
+
+/* Quân Tốt (Góc trái trên, cân bằng bố cục bất đối xứng) */
+.about-piece-three {
+    font-size: clamp(80px, 13vw, 190px);
+    opacity: 0.3;
+    left: 6%;
+    top: 7%;
+    transform: rotate(-12deg);
+    animation: pieceFloatLeft 7s ease-in-out infinite 0.5s;
+}
+
+
+/* =========================================
+   KEYFRAMES HOẠT HÌNH
+========================================= */
+
+@keyframes pieceFloatRight {
+    0%, 100% {
+        transform: rotate(15deg) translateY(0) scale(1);
+    }
+    50% {
+        transform: rotate(20deg) translateY(-20px) scale(1.03);
+    }
+}
+
+@keyframes pieceFloatLeft {
+    0%, 100% {
+        transform: rotate(-12deg) translateY(0) scale(1);
+    }
+    50% {
+        transform: rotate(-8deg) translateY(-16px) scale(0.97);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================
+   FEATURED ARTICLE
+========================= */
+
+.featured {
+    background: var(--black);
+    color: var(--cream);
+    padding: 70px 8%;
+}
+
+.section-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    color: var(--brown);
+}
+
+.featured-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+.featured-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(40px, 6.5vw, 75px);
+    line-height: 1.1;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+.featured-title em {
+    color: var(--brown);
+}
+.featured-text {
+    color: #d8d1c6;
+    max-width: 500px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity:0.7;
+}
+
+.read-more {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--cream);
+    padding-bottom: 8px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    color: var(--brown);
+    border-color: var(--brown);
+}
+
+/* Featured image */
+
+.featured-image {
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-image::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+}
+
+.featured-piece {
+    font-family: Georgia, serif;
+    font-size: 220px;
+    color: var(--cream);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s ease;
+    text-shadow: 22px 17px 0 rgba(189, 145, 113, 0.25);
+}
+
+.featured-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 1.5px solid var(--darkbrown);;
+    position: absolute;
+    opacity:0.9;
+}
+
+.featured-piece:hover {
+        transform: translateY(-4px);
+}
+
+/* =========================
+   LATEST ARTICLES
+========================= */
+
+.latest {
+    padding: 80px 5% 80px;
+    background: var(--brown);
+}
+
+.latest-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 55px;
+}
+.section-label {
+    color: var(--cream);
+    opacity:0.8;
+}
+.latest-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    color: var(--darkbrown);
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 1;
+}
+.latest-heading em {
+    color: var(--cream);
+}
+/* Article grid */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.article-card {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.article-detail {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--darkbrown);
+    opacity: 0.85;
+}
+.article-detail p {
+    margin: 0 0 10px 0;
+}
+
+/* Khi thẻ bài viết được thêm class .active (bấm vào) */
+.article-card.active .article-detail {
+    max-height: 400px; /* Đủ lớn để chứa đoạn văn bản */
+    opacity: 1;
+    margin: 15px 0;
+}
+
+/* Đổi chữ hoặc hiệu ứng của nút khi mở */
+.article-card.active .article-link {
+    color: var(--darkbrown);
+}
+.article-image {
+    height: 300px;
+    background: var(--darkbrown);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.article-piece {
+    color: var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 130px;
+    transition: 0.4s;
+}
+
+.article-card:hover .article-piece {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.article-category {
+    color: var(--darkbrown);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity:0.8;
+}
+
+.article-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.article-link {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+        transition: 0.2s;
+        color: var(--darkbrown);
+}
+.article-link:hover{
+    padding-left: 5px;
+}
+/* =========================
+   NEWS
+========================= */
+
+.news {
+    border-top: 1px solid var(--darkbrown);
+    background: var(--brown);
+    padding: 60px 8%;
+}
+
+.news-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 55px;
+}
+
+.news-top h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(50px, 6vw, 80px);
+    line-height: 0.9;
+    color: var(--darkbrown);
+}
+.news-top em {
+    color:var(--cream);
+}
+.news-top .section-label {
+    color: var(--black) !important;
+}
+.news-intro {
+    max-width: 330px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--darkbrown);
+    opacity:0.8;
+}
+
+/* News items */
+
+.news-list {
+    border-top: 1px solid var(--darkbrown);
+}
+
+.news-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--darkbrown);
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    gap: 25px;
+    align-items: start;
+    transition: 0.3s;
+}
+
+.news-item:hover {
+    padding-left: 15px;
+}
+
+.news-date {
+    font-size: 12px;
+    letter-spacing: 1px;
+        color: var(--darkbrown);
+}
+
+.news-content .news-category {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+     color: var(--darkbrown);
+}
+
+.news-content h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.news-content p {
+    max-width: 900px;
+    font-size: 13px;
+    line-height: 1.5;
+     color: var(--darkbrown);
+    opacity:0.8;
+}
+
+.news-arrow {
+    text-align: right;
+    font-size: 17px;
+    color: var(--darkbrown);
+}
+/* =========================
+   EDITORIAL SECTION
+========================= */
+
+.editorial {
+    min-height: 600px;
+    padding: 50px 8%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+}
+
+.editorial-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.editorial-number {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 200px;
+    line-height: 0.8;
+    color: var(--brown);
+}
+
+.editorial-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.editorial h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(50px, 7vw, 105px);
+    line-height: 1;
+    letter-spacing: -4px;
+    max-width: 850px;
+    margin-bottom: 30px;
+    color: var(--darkbrown);
+}
+.editorial em {
+    color: var(--brown);
+}
+.editorial p {
+    max-width: 550px;
+
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity:0.8;
+        color: var(--darkbrown);
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+/* =========================================
+   FINAL SECTION - MOVÉ EDITORIAL
+========================================= */
+
+.final-section {
+    background: var(--black);
+    color: var(--cream);
+    min-height: 520px;
+    padding: 90px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1. Hiệu ứng đốm sáng Spotlight chìm màu nâu ấm trên nền đen */
+.final-bg-glow {
+    position: absolute;
+    inset: 0;
+    /* 1. Đưa z-index về 1 để nằm DƯỚI nội dung chữ (chữ dùng z-index: 2) */
+    z-index: 1; 
+    
+    /* 2. Giúp hiệu ứng phát sáng nổi bật mịn màng trên nền đen */
+    mix-blend-mode: screen; 
+    
+    /* 3. Tăng nhẹ opacity từ 0.16 lên 0.35 để dễ nhận biết hơn */
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(189, 145, 113, 0.28), transparent 50%),
+        radial-gradient(circle at 15% 85%, rgba(189, 145, 113, 0.20), transparent 45%);
+    
+    pointer-events: none;
+    animation: finalGlowBreathe 8s ease-in-out infinite alternate;
+}
+
+@keyframes finalGlowBreathe {
+    0% { opacity: 0.6; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+/* 2. Label cách điệu có đường line nhỏ phía trước */
+.final-label {
+    color: var(--brown);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.85;
+}
+
+.final-label .label-line {
+    width: 24px;
+    height: 1px;
+    background: var(--brown);
+    opacity: 0.6;
+}
+
+/* 3. Typography tiêu đề lớn kết hợp điểm nhấn màu nâu */
+.final-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    margin: 0 0 45px 0;
+    color: var(--cream);
+}
+
+.final-section h2 em {
+    font-style: italic;
+    color: var(--brown); /* Đổi màu câu hỏi cuối thành tông nâu ấm */
+    font-weight: 400;
+}
+
+/* 4. Đường Link chuyển động tương tác sinh động */
+.final-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(241, 236, 225, 0.35);
+    padding-bottom: 8px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.final-link .arrow {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hiệu ứng rê chuột vào nút */
+.final-link:hover {
+    color: var(--brown);
+    border-color: var(--brown);
+    transform: translateX(4px);
+}
+
+.final-link:hover .arrow {
+    transform: translateX(6px); /* Mũi tên trượt nhẹ sang phải khi hover */
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .featured-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        height: 400px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .editorial-number {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 450px;
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+
+    .hero-bottom {
+        display: block;
+    }
+
+    .hero-note {
+        margin-top: 25px;
+    }
+
+    .featured,
+    .categories,
+    .latest,
+    .news,
+    .editorial,
+    .final-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .featured-title {
+        font-size: 55px;
+    }
+
+    .featured-image {
+        height: 330px;
+    }
+
+    .featured-piece {
+        font-size: 170px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-image {
+        height: 300px;
+    }
+
+    .latest-heading,
+    .news-top {
+        display: block;
+    }
+
+    .view-all {
+        display: inline-block;
+        margin-top: 25px;
+    }
+
+    .news-intro {
+        margin-top: 25px;
+    }
+
+    .news-item {
+        grid-template-columns: 70px 1fr 25px;
+        gap: 12px;
+    }
+
+    .news-content h3 {
+        font-size: 23px;
+    }
+
+    .editorial-number {
+        font-size: 100px;
+    }
+
+    .editorial h2 {
+        font-size: 55px;
+        letter-spacing: -2px;
+    }
+}

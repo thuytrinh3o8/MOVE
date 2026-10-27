@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVÉ — Test trình độ</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/test.css">
+</head>
+
+<body data-page="test">
+    <div id="navbar"></div>
+
+    <main class="page">
+        <!-- INTRO -->
+        <section class="screen active" id="introScreen">
+            <div class="intro">
+              <div>
+           <div class="intro-small">MOVÉ CHESS CHECK</div>
+                    <h1 class="intro-title">
+                        BẠN ĐANG<br>
+                        Ở ĐÂU<br>
+                        <em>TRÊN BÀN CỜ?</em>
+                    </h1>
+
+                    <p class="intro-description">Một vài nước đi sẽ giúp MOVÉ hiểu rõ hơn về
+                        trình độ hiện tại của bạn và tìm ra khóa học
+                        phù hợp nhất để bắt đầu.
+                    </p>
+
+                    <div class="test-info">
+                        <span>08 CÂU HỎI</span>
+                        <span>~ 05 PHÚT</span>
+                        <span>KHÔNG CẦN ĐĂNG KÝ</span>
+                    </div>
+
+                    <button class="primary-btn" onclick="startTest()">
+                        BẮT ĐẦU TEST <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <div class="chess-visual">
+                    <div class="square"><span class="chess-piece">♜</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♜</span></div>
+
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♟</span></div>
+                    <div class="square"><span class="chess-piece">♟</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♟</span></div>
+                    <div class="square"><span class="chess-piece">♟</span></div>
+                    <div class="square"></div>
+
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♞</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♗</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♕</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♙</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♙</span></div>
+                    <div class="square"><span class="chess-piece">♙</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♙</span></div>
+                    <div class="square"><span class="chess-piece">♙</span></div>
+
+                    <div class="square"><span class="chess-piece">♖</span></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"><span class="chess-piece">♖</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEST SCREEN -->
+        <section class="screen" id="testScreen">
+            <div class="test-container">
+                <div class="test-header">
+                    <div class="question-number" id="questionNumber">
+                        NƯỚC ĐI 01 / 08
+                    </div>
+                    <div class="difficulty" id="difficulty">CƠ BẢN</div>
+                </div>
+
+                <div class="progress-wrap">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="position-board" id="positionBoard" style="display:none;"></div>
+
+                <div class="question-category" id="questionCategory">NHẬN BIẾT</div>
+                <h2 class="question-title" id="questionTitle">
+                    Quân nào có thể di chuyển theo hình chữ L?
+                </h2>
+                <p class="question-description" id="questionDescription">
+                    Chọn câu trả lời mà bạn cho là đúng nhất.
+                </p>
+
+                <div class="answers" id="answers"></div>
+            </div>
+        </section>
+
+        <!-- RESULT SCREEN -->
+        <section class="screen" id="resultScreen">
+            <div class="result-container">
+                <div class="result-heading">
+                    <div class="result-small">KẾT QUẢ MOVÉ CHESS CHECK</div>
+                    <h1>HỒ SƠ CỜ<br><em style="color:#BD9171;">CỦA BẠN</em></h1>
+                </div>
+
+                <div class="profile-grid">
+                    <div class="profile-main">
+                        <div>
+                            <div class="profile-label">CHỈ SỐ THAM KHẢO</div>
+                            <div class="score" id="score">640</div>
+                            <div class="score-caption">Không phải Elo thi đấu chính thức</div>
+                        </div>
+
+                        <div>
+                            <div class="profile-label">PROFILE</div>
+                            <div class="profile-name" id="profileName">NGƯỜI KHỞI ĐẦU</div>
+                            <p class="profile-text" id="profileText">
+                                Bạn đang ở giai đoạn làm quen với cờ vua và có nhiều không gian để khám phá.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h2 class="skills-title">Điểm mạnh của bạn</h2>
+
+                        <div class="skill">
+                            <div class="skill-top"><span>Nhận biết</span><span id="skill1Text">82%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" id="skill1"></div></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-top"><span>Quan sát</span><span id="skill2Text">68%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" id="skill2"></div></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-top"><span>Tính toán</span><span id="skill3Text">51%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" id="skill3"></div></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-top"><span>Ra quyết định</span><span id="skill4Text">63%</span></div>
+                            <div class="skill-bar"><div class="skill-fill" id="skill4"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECOMMENDATION -->
+                <div class="recommendation">
+                    <div class="recommendation-label">KHÓA HỌC PHÙ HỢP VỚI BẠN</div>
+
+                    <div class="recommendation-content">
+                        <div>
+                            <div class="course-tag" id="courseLevel">NHẬP MÔN</div>
+                            <h2 id="courseName">KHỞI ĐỘNG</h2>
+                            <p id="courseDescription">
+                                Bắt đầu từ những điều cơ bản, làm quen với bàn cờ và từng bước xây dựng nền tảng chơi cờ.
+                            </p>
+                        </div>
+
+                        <a href="../pages/courses.html" class="primary-btn">
+                            XEM KHÓA HỌC <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NEXT MOVE -->
+                <div class="next-move">
+                    <div class="next-move-label">YOUR NEXT MOVE</div>
+                    <h3>BẠN ĐÃ SẴN SÀNG<br>CHO NƯỚC ĐI TIẾP THEO?</h3>
+
+                    <div class="result-actions">
+                        <button class="primary-btn" onclick="restartTest()">
+                            TEST LẠI <span class="arrow">↻</span>
+                        </button>
+                        <a href="../pages/courses.html" class="secondary-btn">KHÁM PHÁ KHÓA HỌC</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/test.js"></script>
+</body>
+</html>
